@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.625rem; /* 10px */
+  --site-max-w: 90rem; /* 1440px */
+  --container-max-w: 74.5rem; /* 1192px */
+
+  --neutral-0: oklch(1 0 0);
+  --neutral-100: oklch(0.9698 0.0054 95.1);
+  --neutral-200: oklch(0.9417 0.0079 139.44);
+  --neutral-300: oklch(0.9195 0.0076 164.93);
+  --neutral-400: oklch(0.8845 0.0135 179.42);
+  --neutral-600: oklch(0.4342 0.038 180.97);
+  --neutral-800: oklch(0.4342 0.038 180.97);
+  --neutral-900: oklch(0.32 0.0429 181);
+  --neutral-950: oklch(0.3154 0.0297 260.53);
+  --orange-500: oklch(0.7885 0.132 48.75);
+  --teal-500: oklch(0.681 0.0961 180.23);
+  --indigo-500: oklch(0.6178 0.1435 272.51);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Font Families */
+  --font-nunito: var(--font-nunito);
+  --font-nunito-sans: var(--font-nunito-sans);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Braekpoints */
+  --breakpoint-container: 74.5rem; /* 1192px */
+  --breakpoint-site: 90rem; /* 1440px */
+
+  /* Size tokens for width/max-width utilities */
+  --width-container: var(--container-max-w);
+  --min-width-container: var(--container-max-w);
+  --max-width-container: var(--container-max-w);
+  --width-site: var(--site-max-w);
+  --min-width-site: var(--site-max-w);
+  --max-width-site: var(--site-max-w);
+
+  /* Color Palette */
+  --color-*: initial;
+  --color-background: var(--neutral-100);
+  --color-foreground: var(--neutral-900);
+  --color-primary: var(--neutral-900);
+  --color-primary-foreground: var(--neutral-0);
+  --color-card: var(--neutral-0);
+  --color-card-foreground: var(--neutral-900);
+  --color-popover: var(--neutral-0);
+  --color-popover-foreground: var(--neutral-950);
+  --color-accent: var(--neutral-300);
+  --color-accent-foreground: var(--neutral-900);
+  --color-ring: var(--neutral-300);
+  --color-input: var(--neutral-900); /* Placeholder color will be %70 opacity or color-input */
+  --color-neutral-0: var(--neutral-0);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+  --color-orange: var(--orange-500);
+  --color-teal: var(--teal-500);
+  --color-indigo: var(--indigo-500);
+
+  /* Text Sizes */
+  --text-6xl: 4.5rem; /* 72px */
+  --text-5xl: 4rem; /* 64px */
+  --text-4xl: 3.25rem; /* 52px */
+  --text-3xl: 3rem; /* 48px */
+  --text-2xl: 2.5rem; /* 40px */
+  --text-xl: 2rem; /* 32px */
+  --text-lg: 1.5rem; /* 24px */
+  --text-md: 1.25rem; /* 20px */
+  --text-sm: 1.125rem; /* 18px */
+  --text-xs: 1rem; /* 16px */
+  --text-xxs: 0.875rem; /* 14px */
+
+  /* Border Radius */
+  --radius-*: initial;
+  --radius-none: 0px;
+  --radius-full: 999px;
+  --radius: var(--radius); /* 10px */
+  --radius-2: calc(var(--radius) - 8px); /* 2px */
+  --radius-4: calc(var(--radius) - 6px); /* 4px */
+  --radius-6: calc(var(--radius) - 4px); /* 6px */
+  --radius-8: calc(var(--radius) - 2px); /* 8px */
+  --radius-12: calc(var(--radius) + 2px); /* 12px */
+  --radius-16: calc(var(--radius) + 6px); /* 16px */
+  --radius-20: calc(var(--radius) + 10px); /* 20px */
+  --radius-24: calc(var(--radius) + 14px); /* 24px */
+
+  /* Letter Spacing */
+  --tracking-*: initial;
+  --tracking-neg-2: -2px;
+  --tracking-neg-1: -1px;
+  --tracking-neg-05: -0.5px;
+  --tracking-neg-04: -0.4px;
+  --tracking-neg-03: -0.3px;
+
+  /* Line Height */
+  --leading-*: initial;
+  --leading-110: 110%;
+  --leading-120: 120%;
+  --leading-130: 130%;
+  --leading-140: 140%;
+  --leading-150: 150%;
+
+  /* Shadow */
+  --shadow-1: 0 12px 22px rgba(57, 88, 82, 0.16);
+  --inset-shadow-1: inset 0 12px 22px rgba(57, 88, 82, 0.16);
+  --shadow-2: 0 3px 0px var(--color-neutral-300);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-nunito flex min-h-dvh flex-col;
 }
