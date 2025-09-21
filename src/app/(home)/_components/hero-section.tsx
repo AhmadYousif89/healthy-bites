@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 import { H1 } from "@/components/layout/headers";
 import { P1 } from "@/components/layout/paragraphs";
@@ -12,11 +14,12 @@ import PatternSquiggle from "public/assets/images/icons/pattern-squiggle-1.svg";
 
 export const HeroSection = () => {
   return (
-    <Section className="container:pt-0 relative isolate flex flex-col gap-10 pt-12 lg:items-center lg:gap-20 lg:pb-24 lg:text-center">
-      {/* <span className="absolute top-1/2 -z-10 -translate-y-1/2">
-        <PatternSquiggle className="size-fit" />
-      </span> */}
-
+    <Section
+      className={cn(
+        "flex flex-col gap-10 pt-12",
+        "container:pt-0 lg:items-center lg:gap-20 lg:pb-24 lg:text-center",
+      )}
+    >
       <div className="space-y-8 lg:space-y-10">
         <div className="grid gap-3 lg:place-items-center">
           <H1>
@@ -35,7 +38,11 @@ export const HeroSection = () => {
         </Button>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="relative flex items-center justify-center">
+        <PatternSquiggle
+          className="container:block pointer-events-none absolute -top-66 left-1/2 -z-50 hidden -translate-x-1/2 rotate-[-4.8deg]"
+          aria-hidden="true"
+        />
         <Image
           src={HeroSmall}
           alt="A cheerful woman holding cucumber on a cutting board while cooking kitchen salad"
