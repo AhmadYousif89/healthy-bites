@@ -25,6 +25,7 @@
   --font-nunito-sans: var(--font-nunito-sans);
 
   /* Braekpoints */
+  --breakpoint-3xl: 111.25rem; /* 1780px */
   --breakpoint-container: 74.5rem; /* 1192px */
   --breakpoint-site: 90rem; /* 1440px */
 
@@ -51,7 +52,10 @@
   --color-ring: var(--neutral-300);
   --color-input: var(--neutral-900); /* Placeholder color will be %70 opacity or color-input */
   --color-neutral-0: var(--neutral-0);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
   --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
   --color-neutral-800: var(--neutral-800);
   --color-neutral-900: var(--neutral-900);
   --color-neutral-950: var(--neutral-950);
@@ -104,10 +108,27 @@
 
   /* Shadow */
   --shadow-1: 0 12px 22px rgba(57, 88, 82, 0.16);
-  --inset-shadow-1: inset 0 12px 22px rgba(57, 88, 82, 0.16);
   --shadow-2: 0 3px 0px var(--color-neutral-300);
+  --shadow-3: 0 8px 16px 4px rgba(57, 88, 82, 0.1);
 }
 
 body {
   @apply bg-background text-foreground font-nunito flex min-h-dvh flex-col;
+}
+
+.recipe-list {
+  display: grid;
+
+  --grid-gap: 2.7rem;
+  --grid-max-col-count: 3;
+  --grid-min-col-size: 22rem;
+  --grid-col-size-calc: calc(
+    (100% - var(--grid-max-col-count) * var(--grid-gap)) / var(--grid-max-col-count)
+  );
+  --grid-min-col-size-calc: min(100%, max(var(--grid-min-col-size), var(--grid-col-size-calc)));
+
+  gap: calc(var(--grid-gap) * 0.75);
+  justify-items: stretch;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-col-size-calc), 1fr));
 }
