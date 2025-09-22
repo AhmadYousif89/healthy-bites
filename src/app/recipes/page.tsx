@@ -30,13 +30,16 @@ export default async function RecipesPage({ searchParams }: PageProps<"/recipes"
         <h3 id="filters-heading" className="sr-only">
           Filter recipes
         </h3>
-        <div className="flex flex-col justify-between gap-3 md:flex-row lg:gap-4">
-          <div className="flex flex-col gap-3 md:flex-row lg:gap-4">
-            <PrepTimeMenu />
-            <CookTimeMenu />
+
+        <Suspense fallback={<div className="bg-accent h-12 w-full" />}>
+          <div className="flex flex-col justify-between gap-3 md:flex-row lg:gap-4">
+            <div className="flex flex-col gap-3 md:flex-row lg:gap-4">
+              <PrepTimeMenu />
+              <CookTimeMenu />
+            </div>
+            <SearchInput />
           </div>
-          <SearchInput />
-        </div>
+        </Suspense>
 
         <Suspense fallback={<RecipesSkeleton />}>
           <Recipes searchParams={searchParams} />

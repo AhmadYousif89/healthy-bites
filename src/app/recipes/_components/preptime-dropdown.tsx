@@ -45,7 +45,7 @@ export const PrepTimeMenu = () => {
           variant="trigger"
           className="group data-[state=open]:border-primary min-w-[182px]"
         >
-          <span className="flex w-37 items-center justify-between gap-2">
+          <span className="flex w-38 items-center justify-between gap-2">
             {triggerLabel}
             <ChevrnIcon className="size-fit transition-transform duration-200 group-data-[state=open]:rotate-180" />
           </span>

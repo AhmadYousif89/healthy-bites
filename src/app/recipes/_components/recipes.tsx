@@ -2,7 +2,7 @@ import connectToDatabase from "@/lib/db";
 import { Recipe, SearchParams } from "../types";
 
 import { RecipeCard } from "./recipe-card";
-import { P1 } from "@/components/layout/paragraphs";
+import { P1, P2 } from "@/components/layout/paragraphs";
 
 async function getRecipes(searchParams: SearchParams) {
   const params = await searchParams;
@@ -45,8 +45,8 @@ export const Recipes = async ({ searchParams }: Props) => {
 
   if (data.length === 0) {
     return (
-      <P1 className="mt-8 text-center">
-        No recipes found. Please try adjusting your filters or search terms.
+      <P1 className="text-teal mt-8 text-center">
+        No recipes found. <br /> Try adjusting your filters or search terms.
       </P1>
     );
   }

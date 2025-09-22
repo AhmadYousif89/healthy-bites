@@ -109,10 +109,10 @@ export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
               <ul className="grid gap-2">
                 {links.map((l) => (
                   <li key={l.href}>
-                    <P2 className="flex items-center gap-2">
-                      <span>{l.label}: </span>
+                    <P2 className="flex items-center gap-2 font-medium">
+                      <span className="">{l.label}: </span>
                       <a
-                        className="decoration-primary/40 text-xs font-medium underline hover:no-underline"
+                        className="decoration-indigo text-indigo text-xs underline hover:no-underline"
                         href={l.href}
                         target="_blank"
                         rel="noopener noreferrer"

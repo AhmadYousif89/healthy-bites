@@ -16,7 +16,7 @@ import { useUrlState } from "@/hooks/use-url-state";
 import ChevrnIcon from "public/assets/images/icons/icon-chevron-down.svg";
 
 const cooktimes = [
-  { label: "1 minute", value: "1" },
+  { label: "1 minute or less", value: "1" },
   { label: "5 minutes", value: "5" },
   { label: "10 minutes", value: "10" },
 ] as const;
@@ -41,9 +41,9 @@ export const CookTimeMenu = () => {
         <Button
           size="trigger"
           variant="trigger"
-          className="group data-[state=open]:border-primary min-w-[182px]"
+          className="group data-[state=open]:border-primary min-w-[184px]"
         >
-          <span className="flex w-37 items-center justify-between gap-2">
+          <span className="flex w-38 items-center justify-between gap-2">
             {triggerLabel}
             <ChevrnIcon className="size-fit transition-transform duration-200 group-data-[state=open]:rotate-180" />
           </span>
