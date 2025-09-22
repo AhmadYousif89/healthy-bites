@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 
 import { Main } from "@/components/layout/main";
@@ -10,6 +11,12 @@ import { SearchInput } from "./_components/search-input";
 import { PrepTimeMenu } from "./_components/preptime-dropdown";
 import { CookTimeMenu } from "./_components/cooktime-dropdown";
 import { RecipesSkeleton } from "./_components/recipes.skeleton";
+
+export const metadata: Metadata = {
+  title: "Healthy Bites - Your Gateway to Nutritious and Delicious Recipes",
+  description:
+    "Discover a world of healthy and delicious recipes tailored to your dietary needs. From quick meals to gourmet dishes, Healthy Bites has something for everyone.",
+};
 
 export default async function RecipesPage({ searchParams }: PageProps<"/recipes">) {
   return (

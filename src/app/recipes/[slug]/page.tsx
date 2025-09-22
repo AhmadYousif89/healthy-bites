@@ -1,13 +1,33 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import connectToDatabase from "@/lib/db";
 
 import { Recipe } from "../types";
+import connectToDatabase from "@/lib/db";
 import { Main } from "@/components/layout/main";
 import { H3 } from "@/components/layout/headers";
-import { P1, P2 } from "@/components/layout/paragraphs";
+import { P2 } from "@/components/layout/paragraphs";
 import { MoreRecipes } from "./_components/more-recipes";
 import { RecipeDetails } from "./_components/recipe-details";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/recipes/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const recipe = await getRecipeBySlug(slug);
+  if (!recipe) {
+    return {
+      title: "Recipe Not Found - Healthy Bites",
+      description: "The recipe you are looking for does not exist.",
+      robots: "noindex",
+    };
+  }
+
+  return {
+    title: `${recipe.title} - Healthy Bites`,
+    description: recipe.overview,
+  };
+}
 
 async function getRecipeBySlug(slug: string) {
   try {
