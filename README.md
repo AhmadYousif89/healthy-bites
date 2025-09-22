@@ -1,4 +1,4 @@
-# Frontend Mentor - Recipe finder website solution
+# Recipe finder website solution
 
 This is a solution to the Recipe finder website challenge on Frontend Mentor. It implements a simple, performant recipe browsing experience with search and time-based filters.
 
@@ -49,7 +49,7 @@ Routes:
 
 ### Links
 
-- Live site: not deployed yet
+- Live site: https://hb-finder.vercel.app
 
 ## My process
 
@@ -80,8 +80,3 @@ Routes:
 ## Author
 
 - [Ahmad Yousif](https://github.com/ahmadyousif89)
-
-## Acknowledgments
-
-- Frontend Mentor for the challenge brief and assets.
-- Icons and images are included in the repository’s public assets folder.

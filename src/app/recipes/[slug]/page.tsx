@@ -6,6 +6,7 @@ import { Recipe } from "../types";
 import { RecipeDetails } from "./_components/recipe-details";
 import { H3 } from "@/components/layout/headers";
 import { MoreRecipes } from "./_components/more-recipes";
+import Link from "next/link";
 
 async function getRecipeBySlug(slug: string) {
   try {
@@ -40,7 +41,12 @@ export default async function RecipePage({ params }: PageProps<"/recipes/[slug]"
           aria-labelledby={headingId}
         >
           <P2 className="flex items-center gap-1.5">
-            <span className="text-primary/60">Recipes</span>
+            <Link
+              href="recipes"
+              className="text-primary/60 underline-offset-2 hover:underline focus:underline"
+            >
+              Recipes
+            </Link>
             <span className="text-primary/60">/</span>
             <span className="truncate">{recipe.title}</span>
           </P2>
