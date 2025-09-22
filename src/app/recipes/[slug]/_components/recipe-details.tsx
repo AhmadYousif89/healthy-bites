@@ -48,6 +48,7 @@ export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
           alt={recipe.title}
           width={500}
           height={500}
+          priority
           className="rounded-16 w-full lg:max-w-[580px]"
         />
       </picture>
@@ -100,7 +101,7 @@ export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
             ))}
           </ul>
         </div>
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <H4>Learn more:</H4>
           {(() => {
             const titleForSearch = recipe.title || recipe.slug.replace(/-/g, " ");
@@ -125,7 +126,7 @@ export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
               </ul>
             );
           })()}
-        </div>
+        </div> */}
       </div>
     </article>
   );

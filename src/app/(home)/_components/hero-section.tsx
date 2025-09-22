@@ -47,8 +47,8 @@ export const HeroSection = () => {
           src={HeroSmall}
           alt="A cheerful woman holding cucumber on a cutting board while cooking kitchen salad"
           className="rounded-12 w-full shadow-[0_0_0_5.5px_#FFF] lg:hidden"
-          width={670}
-          height={400}
+          width={704}
+          height={350}
           priority
         />
         <Image
@@ -56,7 +56,7 @@ export const HeroSection = () => {
           alt="A cheerful woman holding cucumber on a cutting board while cooking kitchen salad"
           className="rounded-12 hidden object-cover shadow-[0_0_0_10px_#FFF] lg:block"
           width={1200}
-          height={1080}
+          height={530}
           priority
         />
       </div>
