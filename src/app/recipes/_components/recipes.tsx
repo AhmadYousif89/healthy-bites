@@ -45,7 +45,7 @@ export const Recipes = async ({ searchParams }: Props) => {
 
   if (data.length === 0) {
     return (
-      <P1 className="text-teal mt-8 text-center">
+      <P1 className="text-primary mt-8 text-center">
         No recipes found. <br /> Try adjusting your filters or search terms.
       </P1>
     );

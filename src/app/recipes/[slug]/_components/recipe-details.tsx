@@ -10,32 +10,6 @@ import CookTimeIcon from "public/assets/images/icons/icon-cook-time.svg";
 
 import BulletPointIcon from "public/assets/images/icons/icon-bullet-point.svg";
 
-function getLearnMoreLinks(title: string) {
-  const q = encodeURIComponent(title);
-  return [
-    {
-      href: `https://www.allrecipes.com/search?q=${q}`,
-      label: "AllRecipes",
-      caption: "Discover similar recipes",
-    },
-    {
-      href: `https://www.seriouseats.com/search?q=${q}`,
-      label: "Serious Eats",
-      caption: "Technique & tips",
-    },
-    {
-      href: `https://www.bbcgoodfoodme.com/search-results?q=${q}`,
-      label: "BBC Good Food",
-      caption: "Guides & how-tos",
-    },
-    {
-      href: `https://www.youtube.com/results?search_query=${q} recipe`,
-      label: "YouTube",
-      caption: "Videos about the recipe",
-    },
-  ];
-}
-
 export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
   const headingId = `${recipe.slug}-title`;
 
@@ -101,32 +75,6 @@ export const RecipeDetails = ({ recipe }: { recipe: Recipe }) => {
             ))}
           </ul>
         </div>
-        {/* <div className="space-y-4">
-          <H4>Learn more:</H4>
-          {(() => {
-            const titleForSearch = recipe.title || recipe.slug.replace(/-/g, " ");
-            const links = getLearnMoreLinks(titleForSearch);
-            return (
-              <ul className="grid gap-2">
-                {links.map((l) => (
-                  <li key={l.href}>
-                    <P2 className="flex items-center gap-2 font-medium">
-                      <span className="">{l.label}: </span>
-                      <a
-                        className="decoration-indigo text-indigo text-xs underline hover:no-underline"
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {l.caption}
-                      </a>
-                    </P2>
-                  </li>
-                ))}
-              </ul>
-            );
-          })()}
-        </div> */}
       </div>
     </article>
   );
