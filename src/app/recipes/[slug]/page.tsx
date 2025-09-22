@@ -42,7 +42,7 @@ export default async function RecipePage({ params }: PageProps<"/recipes/[slug]"
         >
           <P2 className="flex items-center gap-1.5">
             <Link
-              href="recipes"
+              href="/recipes"
               className="text-primary/60 underline-offset-2 hover:underline focus:underline"
             >
               Recipes
