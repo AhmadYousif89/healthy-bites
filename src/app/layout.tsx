@@ -11,7 +11,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className={`${nunitoSans.variable} ${nunito.variable} bg-background antialiased`}>
+      <body
+        style={{ backgroundColor: "var(--neutral-100)", color: "var(--neutral-900)" }}
+        className={`${nunitoSans.variable} ${nunito.variable} bg-background antialiased`}
+      >
         <Wrapper>{children}</Wrapper>
       </body>
     </html>
